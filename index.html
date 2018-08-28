@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>JSON</title>
+</head>
+<body>
+	<form onsubmit="return callfan(this)">
+		First Name:<input type="test" name="first"><br>
+		Last Name: <input type="text" name="last"><br>
+		Gender:<input type="radio" name="gender" value="Male">Male <input type="radio" name="gender" value="Female">Female<br>
+		<input type="submit" name="submit">
+		<pre id="output">Fill your form.....</pre>
+	</form>
+
+
+
+	<script type="text/javascript">
+		function callfan(form) {
+		var json={
+			"first_name":form.first.value,
+			"last_name": form.last.value,
+			"Gender": form.gender.value
+		};
+		var html = JSON.stringify(json,0,4);
+		document.getElementById('output').innerHTML=html;
+		var y = JSON.parse(html);
+	   // document.getElementById('output').innerHTML=y;
+
+
+		return false;
+				}
+
+	</script>
+
+</body>
+</html>
